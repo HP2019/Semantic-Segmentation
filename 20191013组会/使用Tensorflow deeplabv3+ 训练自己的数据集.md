@@ -1,4 +1,6 @@
-###  {使用Tensorflow deeplabv3+ 训练自己的数据集}[https://blog.csdn.net/heiheiya/article/details/88535576]
+###  使用Tensorflow deeplabv3+ 训练自己的数据集
+
+参考:https://blog.csdn.net/heiheiya/article/details/88535576
 
 ##### 1.DeepLabV3与DeepLabV3+
 
