@@ -1,4 +1,4 @@
-###  [使用Tensorflow deeplabv3+ 训练自己的数据集][https://blog.csdn.net/heiheiya/article/details/88535576]
+###  {使用Tensorflow deeplabv3+ 训练自己的数据集}[https://blog.csdn.net/heiheiya/article/details/88535576]
 
 ##### 1.DeepLabV3与DeepLabV3+
 
@@ -12,7 +12,7 @@
 >
 >当我们使用一种低扩张率时，我们会得到非常局部/低尺度的信息。当我们采用高扩张率时，我们会处理到更多全局/高尺度的信息。因此 DeepLabV3 模型融合了不同扩张率的多孔卷积来获取多尺度信息。
 >
->![12](/home/hp/桌面/20191013组会/图片/12.png)
+>![12](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/12.png)
 
 
 
@@ -20,7 +20,7 @@
 >
 >为了处理这件事， DeepLabV3+ 在 DeepLabV3 上加入了中间的解码模块，通过 DeepLabV3 处理后，首先特征图会被放大4倍。之后它们会和前端特征提取的原特征图一起处理，之后再放大4倍。这减轻了后端网络的负担，并提供了一条从前端特征提取到网络后面部分的捷径。
 >
->![13](/home/hp/桌面/20191013组会/图片/13.png)
+>![13](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/13.png)
 
 
 
@@ -28,7 +28,7 @@
 
 1.从网上下载30张道路和车辆的图片
 
-![20](/home/hp/桌面/20191013组会/图片/20.png)
+![20](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/20.png)
 
 2.labelme的使用
 
@@ -47,7 +47,7 @@ sudo pip install labelme
 
 使用
 
-![15](/home/hp/桌面/20191013组会/图片/15.png)
+![15](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/15.png)
 
 > 报错1：路径文件夹名称不要包含中文
 
@@ -55,21 +55,21 @@ sudo pip install labelme
 
 初始界面
 
-<img src="/home/hp/桌面/20191013组会/图片/18.png" alt="18" style="zoom: 50%;" />
+<img src="https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/18.png" alt="18" style="zoom: 50%;" />
 
 OpenDir可以直接批量处理文件夹内的图片
 
 使用CreatePolygons进行多边形框选，框选目标后可以设置标签名称
 
-<img src="/home/hp/桌面/20191013组会/图片/19.png" alt="19" style="zoom:50%;" />
+<img src="https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/19.png" alt="19" style="zoom:50%;" />
 
 完成后会生成json文件
 
-![4](/home/hp/桌面/20191013组会/图片/4.png)
+![4](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/4.png)
 
-labelme下面的cli文件夹下有一个json_to_dataset.py，执行该文件，解析json文件
+labelme下面的cli文件夹下有一个`json_to_dataset.py`，执行该文件，解析json文件
 
-![5](/home/hp/桌面/20191013组会/图片/5.png)
+![5](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/5.png)
 
 使用脚本对文件批量处理
 
@@ -83,13 +83,13 @@ done
 
 处理后
 
-![6](/home/hp/桌面/20191013组会/图片/6.png)每个文件夹对应一张图片，文件夹内有五个文件
+![6](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/6.png)每个文件夹对应一张图片，文件夹内有五个文件
 
-![7](/home/hp/桌面/20191013组会/图片/7.png)
+![7](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/7.png)
 
 接下来为标注出来的label.png进行着色
 
-写一个python程序，命名为convert.py
+写一个python程序，命名为`convert.py`
 
 ```python
 import PIL.Image
@@ -107,7 +107,7 @@ for i in range(num):
 
 着色后的结果
 
-![8](/home/hp/桌面/20191013组会/图片/8.png)
+![8](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/8.png)
 
 刚刚着色之后的图是24位png图，deeplab中的标注图片需要是灰度图
 
@@ -126,11 +126,11 @@ end
 
 这是生成的结果
 
-![9](/home/hp/桌面/20191013组会/图片/9.png)
+![9](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/9.png)
 
 因为图像的像素值其实是像素的类别，是非常小的，看起来是一片黑的
 
-![14](/home/hp/桌面/20191013组会/图片/14.png)
+![14](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/14.png)
 
 使用matlab可以看出区别
 
@@ -140,7 +140,7 @@ end
 
 ##### 3.使用 deepv3+ 训练数据集
 
-编写python程序 clist.py 生成训练集的 train.txt 
+编写python程序 `clist.py` 生成训练集的 train.txt 
 
 ```python
 import os
@@ -171,7 +171,7 @@ ftrain.close()
 
 生成的train.txt如图所示
 
-<img src="/home/hp/桌面/20191013组会/图片/17.png" alt="17" style="zoom:50%;" />
+<img src="https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/17.png" alt="17" style="zoom:50%;" />
 
 下面生成tfrecord文件
 
@@ -197,7 +197,7 @@ ftrain.close()
 >1、它特别适应于 Tensorflow ，或者说它就是为 Tensorflow 量身打造的。  
 >2、因为 Tensorflow开发者众多，统一训练时数据的文件格式是一件很有意义的事情。也有助于降低学习成本和迁移成本。
 
-使用models_master/research/deeplab/datasets/build_voc2012_data.py来生成
+使用`models_master/research/deeplab/datasets/build_voc2012_data.py`来生成
 
 按照要求整理文件夹
 
@@ -227,11 +227,11 @@ list folder:
 
 生成的tfrecord如下图所示
 
-![16](/home/hp/桌面/20191013组会/图片/16.png)
+![16](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/16.png)
 
 使用现有模型训练时，首先要注册自己的数据集
 
-在models_master/research/deeplab/datasets/segmentation_dataset.py中110行的地方添加如下内容
+在`models_master/research/deeplab/datasets/segmentation_dataset.py`中110行的地方添加如下内容
 
 ```python
 _SEGTEST_INFORMATION = DatasetDescriptor(
@@ -309,15 +309,15 @@ python "${WORK_DIR}"/train.py \
 
 运行时每10次输出一个loss值
 
-![1](/home/hp/桌面/20191013组会/图片/1.png)
+![1](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/1.png)
 
-![2](/home/hp/桌面/20191013组会/图片/2.png)
+![2](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/2.png)
 
 共运行500次，平均每次约9.1s，共耗时一个半小时左右
 
 loss的变化趋势
 
-![11](/home/hp/桌面/20191013组会/图片/11.png)
+![11](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/11.png)
 
 训练之后进行验证
 
@@ -340,7 +340,7 @@ python "${WORK_DIR}"/eval.py \
   --max_number_of_evaluations=1
 ```
 
-![3](/home/hp/桌面/20191013组会/图片/3.png)
+![3](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/3.png)
 
 图片尺寸可能会报错
 
@@ -369,6 +369,6 @@ python "${WORK_DIR}"/vis.py \
 
 在`mysegtest/exp/train_on_trainval_set/vis/segmentation_results`可以找到可视化之后的结果
 
-![10](/home/hp/桌面/20191013组会/图片/10.png)
+![10](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/10.png)
 
 根据结果进行模型修正等工作
