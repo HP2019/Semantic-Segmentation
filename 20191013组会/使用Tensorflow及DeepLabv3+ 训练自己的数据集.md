@@ -28,11 +28,11 @@
 
 ##### 2.制作语义分割数据集
 
-1.从网上下载30张道路和车辆的图片
+下载30张道路和车辆的图片
 
 ![20](https://github.com/HP2019/Semantic-Segmentation/blob/master/20191013%E7%BB%84%E4%BC%9A/%E5%9B%BE%E7%89%87/20.png)
 
-2.labelme的使用
+labelme的使用
 
 >labelme是麻省理工（MIT）的计算机科学和人工智能实验室（CSAIL）研发的图像标注工具，人们可以使用该工具创建定制化标注任务或执行图像标注，项目源代码已经开源。
 
@@ -140,7 +140,7 @@ end
 
 
 
-##### 3.使用 deepv3+ 训练数据集
+##### 3.使用 DeepLabv3+ 训练数据集
 
 编写python程序 `clist.py` 生成训练集的 train.txt 
 
